@@ -1,21 +1,33 @@
-class ParkingSpot{
+class ParkingSpot {
     private String spotId;
     private SpotSize size;
     private boolean isOccupied;
     private Vehicle parkedVehicle;
 
-    ParkingSpot(String spotId, SpotSize size){
+    ParkingSpot(String spotId, SpotSize size) {
         this.spotId = spotId;
         this.size = size;
         this.isOccupied = false;
     }
-    boolean isAvailable(){return !isOccupied;}
 
-    void parkVehicle(Vehicle v){
+    String getSpotId() {
+        return spotId;
+    }
+
+    SpotSize getSize() {
+        return size;
+    }
+
+    boolean isAvailable() {
+        return !isOccupied;
+    }
+
+    void parkVehicle(Vehicle v) {
         this.parkedVehicle = v;
         this.isOccupied = true;
     }
-    void removeVehicle(Vehicle v){
+
+    void removeVehicle() {
         this.parkedVehicle = null;
         this.isOccupied = false;
     }
