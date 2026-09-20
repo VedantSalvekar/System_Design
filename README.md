@@ -1,6 +1,6 @@
 # System Design
 
-LLD practice problems. Each problem lives in its own folder.
+LLD practice problems.
 
 - `ParkingLot`
 - `TicTacToe`
