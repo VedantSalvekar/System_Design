@@ -109,4 +109,37 @@ class Reservation{
     ReservationStatus getStatus() { return status; }
     void setStatus(ReservationStatus status) { this.status = status; }
 }
+//BILL & PAYMENT
+class Bill{
+    private String id;
+    private Reservation reservation;
+    private double totalAmnt;
 
+    Bill(Reservation r){
+        this.id = UUID.randomUUID().toString().substring(0, 8);
+        this.reservation = reservation;
+        this.totalAmount = calculateAmount();
+    }
+    double calculateAmount(){
+        return 0.0;
+    }
+    double getTotalAmount(){return totalAmnt;}
+}
+
+class Payment{
+    private String id,
+    private Bill bill,
+    private String status,
+    private LocalDateTime timestamp;
+
+    Payment(Bill bill){
+        this.id = UUID.randomUUID().toString().substring(0,8);
+        this.bill = bill;
+        this.status = "SUCCESS";
+        this.timestamp = LocalDateTime.now();
+    }
+    public String toString(){
+         return "Payment " + id + " | $" + bill.getTotalAmount() + " | " + status;
+    }
+
+}
